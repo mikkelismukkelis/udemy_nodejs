@@ -13,7 +13,11 @@ router.get('/add-product', (req, res, next) => {
   //     '<form action="/admin/add-product" method="POST"><input type="text" name="title"><button type="submit">Add product</button></form>'
   //   )
   //   res.sendFile(path.join(__dirname, '..', 'views', 'add-product.html'))
-  res.sendFile(path.join(rootDir, 'views', 'add-product.html'))
+  // res.sendFile(path.join(rootDir, 'views', 'add-product.html'))
+  res.render('add-product', {
+    pageTitle: 'Add product',
+    path: '/admin/add-product',
+  })
 })
 
 router.post('/add-product', (req, res, next) => {
